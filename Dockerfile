@@ -24,7 +24,7 @@ RUN requirements="cron libpng-dev libmcrypt-dev libmcrypt4 libcurl3-dev libfreet
  && docker-php-ext-install bcmath
 
 # add magento cron job
-COPY magento-source/crontab /etc/cron.d/magento2-cron
+COPY crontab /etc/cron.d/magento2-cron
 RUN chmod 0644 /etc/cron.d/magento2-cron
 RUN crontab -u www-data /etc/cron.d/magento2-cron 
 
