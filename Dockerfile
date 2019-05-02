@@ -7,6 +7,8 @@ ENV INSTALL_DIR /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php \
 && mv composer.phar /usr/local/bin/composer
 
+COPY ./auth.json /var/www/.composer/
+
 # install libraries
 RUN requirements="cron libpng-dev libmcrypt-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libfreetype6-dev libicu-dev libxslt1-dev" \
  && apt-get update \
