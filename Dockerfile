@@ -40,6 +40,10 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # www-data should own /var/www
 RUN chown -R www-data:www-data /var/www
 
+#copying and changing mode of composer file
+COPY composer.json /var/www/html
+RUN chmod 777 /var/www/html/composer.json
+
 # switch user to www-data
 USER www-data
 
